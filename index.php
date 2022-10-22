@@ -4,12 +4,12 @@
 	<title>MUSIC MANAGEMENT SYSTEM</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="device-width,initial scale">
-
+<link href="resources/assets/images/icon/W.jpg" rel="icon">
 </head>
 <body>
 <style>
-	@font-face{
-		
+	body{
+
 	}
 </style>
 <header>
