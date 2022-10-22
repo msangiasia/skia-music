@@ -8,8 +8,14 @@
 </head>
 <body>
 <style>
-	body{
+	*{
+		box-sizing: border-box;
 
+	}
+	body{
+      text-decoration: none;
+      margin: 0px;
+      padding: 0px;
 	}
 </style>
 <header>
