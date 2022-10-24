@@ -246,7 +246,7 @@ body{
             Are you an admin? <a href="admin.php">click here</a>
             </div>
             <div class="admin">
-            Do you have an Account? <a href="signup.php">click here</a>
+            Do you have an Account? <a href="register.php">click here</a>
             </div>
         </form>
 
