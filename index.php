@@ -1,4 +1,8 @@
-<!doctype html>
+<?php
+   session_start();
+   ?>
+   
+<!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
 <title>SKIA MUSIC</title>
@@ -230,7 +234,7 @@ body{
             <div class="input-field">
                 <input type="password" id="password" name="password"  class="password" placeholder="Enter your password" required><i class="uil uil-lock icon"></i>      
             </div>
-            <div class "checkbox1-text"><input type="checkbox" onclick="myFunction()">Show Password</div>
+            <div class ="checkbox1-text"><input type="checkbox" onclick="myFunction()">Show Password</div>
             <div class="checkbox-text">
                         <div class="checkbox-content">
                             <input type="checkbox" id="logCheck">
@@ -248,7 +252,41 @@ body{
             <div class="admin">
             Do you have an Account? <a href="signup.php">click here</a>
             </div>
-        </form>
 
+        </form>
+         
 </body>
 </html>
+
+
+ <?php
+   if(isset($_POST['submit'])){
+    //getting user inputs
+    $Email = $_POST['Email'];
+    $Password = $_POST['Password'];
+
+    //link the database to login form
+    $link = mysqli_connect("localhost","root","","skia");
+
+    //select data in the table
+    $sql = mysqli_query($link,"SELECT * FROM user WHERE Email = '$Email' AND Password = '$Password'");
+    $row = mysqli_fetch_array($sql);
+
+    if(is_array($row))
+    {
+        $_SESSION['Email'] = $row['Email'];
+        $_SESSION['Pass'] = $row['Pass'];
+    }
+    else
+    {
+        echo '<script>alert("Error: Invald username or password");
+            window.location.href="index.php";
+            </script>';
+    }
+   }
+   if (isset($_SESSION['Email'])) {
+    echo '<script>alert("Successfully log in");
+            window.location.href="welcome.php";
+            </script>';
+   }
+    ?>
