@@ -30,9 +30,25 @@
         }
         .sidebar header{
         	font-size: 22px;
-        	
-            }
+        	color: white;
+        	text-align: center;
+        	line-height: 70px;
+        	background: #063146;
+        	user-select: none;
 
+            }
+              
+        .sidebar ul a{
+        	display: block;
+        	height: 100%;
+        	width: 100%;
+        	line-height: 65px;
+        	font-size: 20px;
+        	color: white;
+        	padding-left: 40px;
+        	box-sizing: border-box;
+        	border-top:1px solid rgba(255, 255,255,.1);
+        }
 
 
 
@@ -46,7 +62,7 @@
 </head>
 <body>
 	<div class="sidebar">
-		<header>ARTIST  DASHBOARD</header>
+		<header><i class="fas fa-person text-gradient-primary">ARTIST  DASHBOARD</i></header>
 		<ul>
 			<li><a href="#"> <i class="fas fa-home text-gradient-primary">HOME</i></a></li>
 			<li><a href="#"> <i class="fas fa-music text-gradient-primary">MUSIC</i></a></li>
@@ -54,10 +70,8 @@
 			<li><a href="#"> <i class="fas fa-th-list text-gradient-primary">GENRE</i></a></li>
 		</ul>
 		
-	</div>
-<div style="display: flex; justify-content: center;">
-	<p style="font-size: 40px;">Hi welcome <b><?php echo $_SESSION['Email']; ?></b></p>
-</div>
+
+
 <a href="logout.php" style="display: flex; justify-content: center;"><button>log out</button></a>
 </body>
 </html>
