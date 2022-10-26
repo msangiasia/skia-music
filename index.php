@@ -1,8 +1,7 @@
-<?php
+   <?php
    session_start();
    ?>
-   
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
 <title>SKIA MUSIC</title>
@@ -195,7 +194,7 @@ body{
 }
 
 .button input:hover{
-    background-color: #0044ff;
+    background-color: #191970;
 }
 
 .form .login-signup{
@@ -212,7 +211,7 @@ body{
   .h{
      background: rgb(0,0,0);
      background: linear-gradient(338deg, rgba(0,0,0,1) 14%, rgba(54,36,36,1) 41%, rgba(130,120,120,1) 53%, rgba(0,0,0,1) 92%);
-		
+    
   }
 </style>
 
@@ -224,15 +223,15 @@ body{
         <div class="forms">
             <div class="form login">   
             <div class="img-container">
-            <h style="font-size: 24px; color:;"><strong>ARTIST PANEL </strong></h> 
+            <h style="font-size: 24px; color:darkblue;"><strong>ARTIST PANEL </strong></h> 
            
-        <form action="" method="POST">
+        <form action="index.php" method="POST">
             <div class="input-field">
-                <input type="text" id="username" name="username" placeholder="Enter your email" required> <i class="uil uil-envelope icon"></i>
+                <input type="text" id="username" name="Email" placeholder="Enter your email" required> <i class="uil uil-envelope icon"></i>
             </div>
-                    
+
             <div class="input-field">
-                <input type="password" id="password" name="password"  class="password" placeholder="Enter your password" required><i class="uil uil-lock icon"></i>      
+                <input type="password" id="password" name="Pass"  class="password" placeholder="Enter your password" required><i class="uil uil-lock icon"></i>      
             </div>
             <div class ="checkbox1-text"><input type="checkbox" onclick="myFunction()">Show Password</div>
             <div class="checkbox-text">
@@ -244,7 +243,7 @@ body{
             </div>
 
             <div class="input-field button">
-                 <input type="submit"  id="form_submit"  name="signin" value="Login">
+                 <input type="submit"  id="form_submit"  name="submit" value="Login">
             </div>
             <div class="admin">
             Are you an admin? <a href="admin.php">click here</a>
@@ -258,18 +257,17 @@ body{
 </body>
 </html>
 
-
- <?php
+   <?php
    if(isset($_POST['submit'])){
     //getting user inputs
     $Email = $_POST['Email'];
-    $Password = $_POST['Password'];
+    $Pass = $_POST['Pass'];
 
     //link the database to login form
-    $link = mysqli_connect("localhost","root","","skia");
+    $link = mysqli_connect("localhost","root","","login");
 
     //select data in the table
-    $sql = mysqli_query($link,"SELECT * FROM user WHERE Email = '$Email' AND Password = '$Password'");
+    $sql = mysqli_query($link,"SELECT * FROM user WHERE Email = '$Email' AND Pass = '$Pass'");
     $row = mysqli_fetch_array($sql);
 
     if(is_array($row))
@@ -279,7 +277,7 @@ body{
     }
     else
     {
-        echo '<script>alert("Error: Invald username or password");
+        echo '<script>alert("Error: Invald username or paasword");
             window.location.href="index.php";
             </script>';
     }
