@@ -91,7 +91,7 @@
          $link = mysqli_connect("localhost","root","","skia");
 
          //insert data in the table
-         $sql = mysqli_query($link,"INSERT INTO user (Fname,Lname,Email,Pass) VALUES ('$Fname','$Lname','$Email','$Pass')");
+         $sql = mysqli_query($link,"INSERT INTO user (fname,Lname,Email,Pass) VALUES ('$Fname','$Lname','$Email','$Pass')");
 
          // to check and display message if data is inserted in the table/database
          if ($sql) {
