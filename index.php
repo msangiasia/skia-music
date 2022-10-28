@@ -284,7 +284,7 @@ body{
    }
    if (isset($_SESSION['Email'])) {
     echo '<script>alert("Successfully log in");
-            window.location.href="home.php";
+            window.location.href="users/home.php";
             </script>';
    }
     ?>
