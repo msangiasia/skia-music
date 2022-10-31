@@ -124,6 +124,23 @@
             background: #F5F6FA;
             border: 2px solid #EFEEF1;
         }
+        nav .profile-details img{
+            height: 40px;
+            width: 40px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+        nav .profile-details .admin_name{
+            font-size: 15px;
+            font-weight: 500;
+            color: #333;
+            margin: 0 10px;
+            white-space: nowrap;
+        }
+        nav .profile-details i{
+            color: #333;
+            font-size: 25px;
+        }
     </style>
 </head>
 <body>
@@ -152,7 +169,7 @@
                     <i class='bx bx-search'></i>
                 </div>
                 <div class="profile-details">
-                    <img src="">
+                    <img src="d.jpg">
                     <span class="admin_name">Mosko</span>
                     <i class='bx bx-chevron-down'></i>
                 </div>
@@ -162,3 +179,14 @@
 
 </body>
 </html>
+
+
+<script >
+    let sidebar=document.querySelector(".sidebar");
+    let sidebarBtn=document.querySelector(".sidebarBtn")
+
+
+    sidebarBtn.onclick=function(){
+        sidebar.classlist.toggle("active");
+    }
+</script>
