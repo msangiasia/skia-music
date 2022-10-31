@@ -22,7 +22,7 @@
         }
         
         .sidebar{
-            position: fixed;
+            position: flex;
             left: 0;
             width: 250px;
             height: 100%;
@@ -81,7 +81,7 @@
     <div class="sidebar">
         <header><i class="fas fa-person text-gradient-primary">ARTIST  DASHBOARD</i></header>
         <ul>
-            <li><a href="home1.php"> <i class="fas fa-home text-gradient-primary">HOME</i></a></li>
+            <li><a href="#"> <i class="fas fa-home text-gradient-primary">HOME</i></a></li>
             <li><a href="#"> <i class="fas fa-music text-gradient-primary">MUSIC</i></a></li>
             <li><a href="#"> <i class="fas fa-list text-gradient-primary">PLAYLIST</i></a></li>
             <li><a href="#"> <i class="fas fa-th-list text-gradient-primary">GENRE</i></a></li>
