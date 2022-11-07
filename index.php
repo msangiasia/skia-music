@@ -1,15 +1,13 @@
-   <?php
-   session_start();
-   ?>
-  <!DOCTYPE html>
-<html class="no-js" lang="en">
-<head>
-<title>SKIA MUSIC</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-<style>
+<!doctype html>
+<html lang="en">
+  <head>
+  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
  
 *{
     margin: 0;
@@ -215,9 +213,9 @@ body{
   }
 </style>
 
-</script>
-</head>
-<body>
+  </head>
+  <body>
+    <body>
     
     <div class="container">
         <div class="forms">
@@ -246,14 +244,14 @@ body{
                  <input type="submit"  id="form_submit"  name="submit" value="Login">
             </div>
             <div class="admin">
-            Are you an admin? <a href="admin.php">click here</a>
+            Are you an admin? <a href="admin/index.php">click here</a>
             </div>
             <div class="admin">
             Do you have an Account? <a href="signup.php">click here</a>
             </div>
 
         </form>
-         
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
 
@@ -286,5 +284,9 @@ body{
     echo '<script>alert("Successfully log in");
             window.location.href="users/home.php";
             </script>';
-   }
+ }
     ?>
+    
+   
+
+  

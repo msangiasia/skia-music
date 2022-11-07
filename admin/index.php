@@ -1,192 +1,292 @@
-<!DOCTYPE html>
-<html>
+   <?php
+   session_start();
+   ?>
+  <!DOCTYPE html>
+<html class="no-js" lang="en">
 <head>
-    <title>SKIA MUSIC</title>
-    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
-    <!--boxicon CDN Link-->
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-   <style>
-        @import url('https://fonts.google apis.com/css?family=Josefin+display: =swap')
-        body{
-            font-family: 'Roboto',sans-serif
-        }  
-        *{
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            text-decoration: none;
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-        }
-        
-        .sidebar{
-            position: fixed;
-            left: 0;
-            width: 250px;
-            height: 100%;
-            background: #042331;
+<title>SKIA MUSIC</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+<style>
+ 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 
-        }
-        .sidebar header{
-            font-size: 22px;
-            color: white;
-            text-align: center;
-            line-height: 70px;
-            background: #063146;
-            user-select: none;
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("MIKE.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+            
+}
 
-            }
-              
-        .sidebar ul a{
-            display: block;
-            height: 100%;
-            width: 100%;
-            line-height: 65px;
-            font-size: 20px;
-            color: white;
-            padding-left: 40px;
-            box-sizing: border-box;
-            border-top:1px solid rgba(255, 255,255,.1);
-            border-bottom: 1px solid black; 
-            transition: .4s;
+.container{
+    position: relative;
+    max-width: 430px;
+    width: 100%;
+    background: #FFFFFFFF;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 20px;
+}
 
-        }
-        ul li.hover a{
-            padding-left: 50px;
-        }
-        
-        .sidebar ul a i{
-            margin-right: 16px;
-        }
-        .home-section {
-        background: #f5f5f5;
-        position: relative;
-        min-height: 100vh;
-        width: calc(100%-200px);
-        left:240px;
-        }
-        .home-section nav{
-        height: 40px;
-        background: #fff;
-        padding:0 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        }
-        .home-section nav .sidebar-botton{
-            display: flex;
-            align-items: center;
-            font-size: 24px;
-            font-weight: 500;
-        }
-        .home-section nav .sidebar-botton i{
-           font-size: 35px;
-           margin-right:10px; 
-        }
-        .home-section nav .search-box{
-            height: 50px;
-            width: 550;
-            margin: 0 20px;
-            position: relative;
+.container .forms{
+    display: flex;
+    align-items: center;
+    height: 440px;
+    width: 200%;
+    transition: height 0.2s ease;
+}
 
-        }
-        nav .search-box input{
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            border-radius: 6px;
-            padding: 0 15px;
-            font-size: 17px;
-            color: #fff;
-            background: #F5F6FA;
-            border: 2px solid #EFEEF1;
-            outline: none;
-        }
-        nav .search-box .bx-search{
-            position: absolute;
-            right: 5px;
-            top:50%;
-            transform: translateY(-50%);
-            height: 40px;
-            width: 40px;
-            background: #2697FF;
-            border-radius: 6px;
-            color: #fff;
-            font-size: 22px;
-            line-height: 40px;
-            text-align: center;
-        }
-        .home-section nav .profile-details{
-            display: flex;
-            align-items: center;
-            height: 50px;
-            min-width: 190px;
-            background: #F5F6FA;
-            border: 2px solid #EFEEF1;
-        }
-        nav .profile-details img{
-            height: 40px;
-            width: 40px;
-            object-fit: cover;
-            border-radius: 6px;
-        }
-        nav .profile-details .admin_name{
-            font-size: 15px;
-            font-weight: 500;
-            color: #333;
-            margin: 0 10px;
-            white-space: nowrap;
-        }
-        nav .profile-details i{
-            color: #333;
-            font-size: 25px;
-        }
-    </style>
+
+.container .form{
+    width: 50%;
+    padding: 30px;
+    background-color: #fff;
+    transition: margin-left 0.18s ease;
+}
+
+.container.active .login{
+    margin-left: -50%;
+    opacity: 0;
+    transition: margin-left 0.18s ease, opacity 0.15s ease;
+}
+
+.container .signup{
+    opacity: 0;
+    transition: opacity 0.09s ease;
+}
+.container.active .signup{
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+.container.active .forms{
+    height: 600px;
+}
+.container .form .title{
+    position: relative;
+    font-size: 27px;
+    font-weight: 600;
+}
+
+.form .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background-color: #4d4d4d;
+    border-radius: 25px;
+}
+
+.form .input-field{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 10px;
+    padding-right: 100%;
+}
+
+.input-field input{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0 35px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid){
+    border-bottom-color: #4d4d4d;
+}
+
+.input-field i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 23px;
+    transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) ~ i{
+    color: #4d4d4d;
+}
+
+.input-field i.icon{
+    left: 0;
+}
+
+.form .checkbox-text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+
+.checkbox1-text{
+  padding-right: 1000px;
+}
+
+.checkbox1-text .checkbox-content{
+    display: flex;
+    align-items: center;
+}
+
+.checkbox1-content input{
+    margin: 0 8px -2px 4px;
+    color: #4d4d4d;
+}
+
+.checkbox-text .checkbox-content{
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-content input{
+    margin: 0 8px -2px 4px;
+    color: #4d4d4d;
+}
+
+.form .text{
+    color: #0044ff;
+    font-size: 14px;
+}
+
+.form a.text{
+    color: #0044ff;
+    text-decoration: none;
+}
+.form a:hover{
+    text-decoration: underline;
+}
+
+.form .button{
+    margin-top: 35px;
+}
+
+.form .button input{
+    border: none;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    background-color:#4d4d4d;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button input:hover{
+    background-color: #191970;
+}
+
+.form .login-signup{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.img-container {
+    text-align: center;
+    margin: 24px 0 12px 0;
+  }
+  
+  
+  .h{
+     background: rgb(0,0,0);
+     background: linear-gradient(338deg, rgba(0,0,0,1) 14%, rgba(54,36,36,1) 41%, rgba(130,120,120,1) 53%, rgba(0,0,0,1) 92%);
+    
+  }
+</style>
+
+</script>
 </head>
 <body>
-    <div class="sidebar">
-        <header><i class="fas fa-person text-gradient-primary">ADMIN  DASHBOARD</i></header>
-        <ul>
-            <li><a href="home1.php"> <i class="fas fa-home text-gradient-primary">HOME</i></a></li>
-            <li><a href="#"> <i class="fas fa-music text-gradient-primary">MUSIC</i></a></li>
-            <li><a href="#"> <i class="fas fa-list text-gradient-primary">PLAYLIST</i></a></li>
-            <li><a href="#"> <i class="fas fa-th-list text-gradient-primary">GENRE</i></a></li>
-            <li><a href="#"> <i class="fas fa-users text-gradient-primary">USERS</i></a></li>
-            <li><a href="#"><i class="fas fa-log-out"></i>
-            <span class="link_name">LOG OUT</span></li>
+    
+    <div class="container">
+        <div class="forms">
+            <div class="form login">   
+            <div class="img-container">
+            <h style="font-size: 24px; color:darkblue;"><strong>ADMIN PANEL </strong></h> 
+           
+        <form action="index.php" method="POST">
+            <div class="input-field">
+                <input type="text" id="username" name="Email" placeholder="Enter your email" required> <i class="uil uil-envelope icon"></i>
+            </div>
 
-        </ul>
-        </div>
-        <!--home-contect-->
-        <section class="home-section">
-            <nav>
-                <div class="sidebar-botton">
-                    <i class="bx bx-menu"></i>
-                    <span class="dashboard">Dashboard</span>
-                </div>
-                <div class="search box">
-                    <input type="text" placeholder="search here">
-                    <i class='bx bx-search'></i>
-                </div>
-                <div class="profile-details">
-                    <img src="d.jpg">
-                    <span class="admin_name">Mosko</span>
-                    <i class='bx bx-chevron-down'></i>
-                </div>
-            </nav>
-        </section>
+            <div class="input-field">
+                <input type="password" id="password" name="Pass"  class="password" placeholder="Enter your password" required><i class="uil uil-lock icon"></i>      
+            </div>
+            <div class ="checkbox1-text"><input type="checkbox" onclick="myFunction()">Show Password</div>
+            <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="logCheck">
+                            <label for="logCheck" class="text">Remember me</label>
+                        </div>
+            <a href="password-recovery.php" class="text">Forgot password?</a>
+            </div>
 
+            <div class="input-field button">
+                 <input type="submit"  id="form_submit"  name="submit" value="Login">
+            </div>
+            <div class="admin">
+            Are you an Artist? <a href="skia music/index.php">click here</a>
+            </div>
+        
 
+        </form>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+         
 </body>
 </html>
 
+   <?php
+   if(isset($_POST['submit'])){
+    //getting user inputs
+    $Email = $_POST['Email'];
+    $Pass = $_POST['Pass'];
 
-<script >
-    let sidebar=document.querySelector(".sidebar");
-    let sidebarBtn=document.querySelector(".sidebarBtn")
+    //link the database to login form
+    $link = mysqli_connect("localhost","root","","login");
 
+    //select data in the table
+    $sql = mysqli_query($link,"SELECT * FROM user WHERE Email = '$Email' AND Pass = '$Pass'");
+    $row = mysqli_fetch_array($sql);
 
-    sidebarBtn.onclick=function(){
-        sidebar.classlist.toggle("active");
+    if(is_array($row))
+    {
+        $_SESSION['Email'] = $row['Email'];
+        $_SESSION['Pass'] = $row['Pass'];
     }
-</script>
+    else
+    {
+        echo '<script>alert("Error: Invald username or paasword");
+            window.location.href="index.php";
+            </script>';
+    }
+   }
+   if (isset($_SESSION['Email'])) {
+    echo '<script>alert("Successfully log in");
+            window.location.href="admin/sidebar.php";
+            </script>';
+   }
+    ?>
